@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{graphicx}
@@ -595,4 +595,169 @@ x_5&=200 \\
 x_4&=50 \\
 x_6&=0
 \end{align*}
+
+\section{Question 6}
+We have the Leontief equation :$(I-C)\textbf{x}=\textbf{d}$ for which the solution is $\textbf{x}=(I-C)^{-1}\textbf{d}$.
+We define both $(I-C)^{-1}$ , $\textbf{d}$ and $\textbf{x}$ as:
+\begin{align*}
+(I-C)^{-1}=
+\left(\begin{array}{cccccc|c}
+     ((I-C)^{-1})_{11}  &   ((I-C)^{-1})_{12}  &      \cdots  &  ((I-C)^{-1})_{1n}  \\
+     ((I-C)^{-1})_{21}  &   ((I-C)^{-1})_{22}  &      \cdots  &  ((I-C)^{-1})_{2n}  \\
+     ((I-C)^{-1})_{31}  &   ((I-C)^{-1})_{32}  &     \cdots  &  ((I-C)^{-1})_{3n}  \\ 
+     \vdots          &   \vdots  &   \vdots   &   \ddots  \\
+     ((I-C)^{-1})_{i1}  &  ((I-C)^{-1})_{i2}  &     \cdots  &   ((I-C)^{-1})_{ij}  \\ 
+\end{array}\right)
+\end{align*}
+\begin{align*}
+\textbf{d}= 
+\left(\begin{array}{c}
+d_1\\
+d_2\\
+\vdots \\
+d_n
+\end{array}\right)
+\text{   }
+\textbf{x}= 
+\left(\begin{array}{c}
+x_1\\
+x_2\\
+\vdots \\
+x_n
+\end{array}\right)
+\end{align*}
+
+
+\subsection{a)}
+If we replace $\textbf{d}$ with $\bm{\tilde{d}}$ and let the new production vector be $\bm{\tilde{x}}$ :
+\begin{align*}
+\bm{\tilde{d}} = \textbf{d}+
+\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+1 \\ 
+\vdots \\
+0
+\end{array}\right)
+= 
+\left(\begin{array}{c}
+d_1\\
+d_2\\
+\vdots \\
+d_j \\ 
+\vdots \\
+d_n
+\end{array}\right)
++
+\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+1 \\ 
+\vdots \\
+0
+\end{array}\right)
+\end{align*}
+Then $\bm{\tilde{x}}=(I-C)^{-1}\bm{\tilde{d}}$ is:
+\begin{align}
+\bm{\tilde{x}}=\left(\begin{array}{cccccc|c}
+     ((I-C)^{-1})_{11}  &   ((I-C)^{-1})_{12}  &      \cdots  &  ((I-C)^{-1})_{1n}  \\
+     ((I-C)^{-1})_{21}  &   ((I-C)^{-1})_{22}  &      \cdots  &  ((I-C)^{-1})_{2n}  \\
+     ((I-C)^{-1})_{31}  &   ((I-C)^{-1})_{32}  &     \cdots  &  ((I-C)^{-1})_{3n}  \\ 
+     \vdots          &   \vdots  &   \vdots   &   \ddots  \\
+     ((I-C)^{-1})_{i1}  &  ((I-C)^{-1})_{i2}  &     \cdots  &   ((I-C)^{-1})_{ij}  \\ 
+\end{array}\right)
+\left(
+\left(\begin{array}{c}
+d_1\\
+d_2\\
+\vdots \\
+d_j \\ 
+\vdots \\
+d_n
+\end{array}\right)
++
+\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+1 \\ 
+\vdots \\0
+\end{array}\right)
+\right)
+\end{align}
+\newpage
+If we expand the expression in $(55)$ we will get:
+\begin{align}
+\bm{\tilde{x}}=(I-C)^{-1}\left(\begin{array}{c}
+d_1\\
+d_2\\
+\vdots \\
+d_j \\ 
+\vdots \\
+d_n
+\end{array}\right)+(I-C)^{-1}
+\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+1 \\ 
+\vdots \\0
+\end{array}\right)
+\end{align}
+Which is: 
+\begin{align}
+\bm{\tilde{x}}=\textbf{x}
++(I-C)^{-1}
+\left(\begin{array}{c}
+0 \\
+0 \\
+\vdots \\
+1 \\ 
+\vdots \\
+0
+\end{array}\right)
+\end{align}
+because $d_j$ is fixed, from (55) we will end up with:
+\begin{align}
+\bm{\tilde{x}}=\textbf{x}
++
+\left(\begin{array}{c}
+((I-C)^{-1})_{11} \\
+((I-C)^{-1})_{2j} \\
+\vdots \\
+((I-C)^{-1})_{ij}
+\end{array}\right)
+=
+\left(\begin{array}{c}
+x_1\\
+x_2\\
+\vdots \\
+x_n
+\end{array}\right)
++
+\left(\begin{array}{c}
+((I-C)^{-1})_{11} \\
+((I-C)^{-1})_{2j} \\
+\vdots \\
+((I-C)^{-1})_{ij}
+\end{array}\right)
+\end{align}
+Hence from (58) we will end up with
+\begin{align}
+\bm{\tilde{x}}=
+\left(\begin{array}{c}
+x_1+((I-C)^{-1})_{1j} \\
+x_2+((I-C)^{-1})_{2j} \\
+\vdots \\
+x_n+((I-C)^{-1})_{nj} \\
+\end{array}\right)
+\end{align}
+This is our production vector which meets the demand $\bm{\tilde{d}}$
+\subsection{b)}
+From the results we obtained in $(59)$, if we increase the demand of the of a particular sector by even just a $\$1$. The amount of production of {\b ALL} sectors has to be increased.
+
+The amount of increase is determined by the j-th column of $((I-C)^{-1})$, which is the amount of production increased in every sector due to the increase of sector j by a dollar..
+
 \end{document}
