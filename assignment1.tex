@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{graphicx}
@@ -31,7 +31,7 @@ The row operations (which reduces it into row echelon form are as follows:
 1 & 1 & 1 & 2 \\
 0 & 3 & -2 & k-2 \\
 0 & -3 & 2 & k^2-4
-\end{array}\right)
+\end{array}\right)&
 \begin{array}{l}
   \text{$R_1$}\\
   \text{$R_2 \longmapsto R_2-R_1$}\\
@@ -42,7 +42,12 @@ The row operations (which reduces it into row echelon form are as follows:
 1 & 1 & 1 & 2 \\
 0 & 3 & -2 & k-2 \\
 0 & 0 & 0 & k^2+k-6
-\end{array}\right)
+\end{array}\right)&
+\begin{array}{l}
+  \text{$R_1$}\\
+  \text{$R_2$}\\
+  \text{$R_3 \longmapsto R_3+R_2$ }
+\end{array}
 \end{align}
 The left side of the last row of the augmented matrix contains a row of zeros so we can solve for k:
 \begin{align}
@@ -112,7 +117,7 @@ z&=t
 
 
 \subsection{Cases Where There Are No Solutions}
-If $\bm{k \neq 2}$ or $\bm{k \neq -3}$ there will be {\bf no} solutions for this system as $0x + 0y + 0z \neq k^2+k-6$ when $k \neq 2$ or $k \neq -3$.
+If $\bm{k \neq 2}$ or $\bm{k \neq -3}$ there will be {\bf no} solutions for this system as $k^2+k-6 \neq 0$ for $k \neq 2$ or $k \neq -3$. Therefore $0x + 0y + 0z \neq k^2+k-6$ when $k \neq 2$ or $k \neq -3$.
 
 \subsection{Cases Where The Planes Meet At A Point}
 It is not possible for this system to meet at one point because the left side of last row in $(5)$ is full of zeros. 
@@ -128,7 +133,7 @@ Let's consider the entry in $i$-th row and $j$-th column of $A(B+C)$.
 \begin{align*}
 [A(B+C)]_{ij}&=\sum^n_{k=1}(A)_{ik}(B+C)_{kj}\\
 &=\sum^n_{k=1}(A)_{ik}\left[(B)_{kj}+(C)_{kj}\right]\\
-&\text{Because We are manipulating real numbers here the following is allowed:}\\
+&\text{Because we are manipulating real numbers here the following is allowed:}\\
 &=\sum^n_{k=1}\left[(A)_{ik}(B)_{kj}+(A)_{ik}(C)_{kj}\right]\\
 &=\sum^n_{k=1}(A)_{ik}(B)_{kj}+\sum^n_{k=1}(A)_{ik}(C)_{kj}\\
 &\text{Using the definition of matrix multiplication we get:}\\
@@ -727,7 +732,7 @@ because $d_j$ is fixed, from (55) we will end up with:
 ((I-C)^{-1})_{11} \\
 ((I-C)^{-1})_{2j} \\
 \vdots \\
-((I-C)^{-1})_{ij}
+((I-C)^{-1})_{nj}
 \end{array}\right)
 =
 \left(\begin{array}{c}
@@ -741,7 +746,7 @@ x_n
 ((I-C)^{-1})_{11} \\
 ((I-C)^{-1})_{2j} \\
 \vdots \\
-((I-C)^{-1})_{ij}
+((I-C)^{-1})_{nj}
 \end{array}\right)
 \end{align}
 Hence from (58) we will end up with
@@ -754,10 +759,11 @@ x_2+((I-C)^{-1})_{2j} \\
 x_n+((I-C)^{-1})_{nj} \\
 \end{array}\right)
 \end{align}
-This is our production vector which meets the demand $\bm{\tilde{d}}$
+This is our production vector which meets the new demand $\bm{\tilde{d}}$
+\newpage
 \subsection{b)}
-From the results we obtained in $(59)$, if we increase the demand of the of a particular sector by even just a $\$1$. The amount of production of {\b ALL} sectors has to be increased.
+From the results we obtained in $(59)$, if we increase the demand of the of a particular sector by even just $\$1$. The amount of production of {\b ALL} sectors has to be increased.
 
-The amount of increase is determined by the j-th column of $((I-C)^{-1})$, which is the amount of production increased in every sector due to the increase of sector j by a dollar..
+The j-th column represents the change of output required in each sector in order to fulfil the change in demand due to the increase of the {\bf j-th} entry of the vector  $\textbf{d}$.
 
 \end{document}
